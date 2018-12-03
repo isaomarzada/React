@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Bloc</title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+
+    <script type="text/babel">
+
+      class Counter extends React.Component {
+         constructor(props){
+           super(props);
+           this.state = {
+             number: 14
+           }
+         }
+ 
+        render() {
+          return (
+            <div>
+              <img src={this.props.image} alt="Bloc Logo"/>
+              <h2>Current Record: {this.props.label}</h2>
+               <h3>Current week: {this.state.number}</h3>
+            </div>
+          );
+        }
+      }
+
+      const info = {
+        date: new Date(),
+        image: 'https://static.clubs.nfl.com/image/private/t_photogallery/f_auto/vikings/ia0pmjdgzosuwn43mlht.jpg',
+      }
+
+      Counter.defaultProps = {
+        label: "6-4-1"
+        
+      }
+
+      ReactDOM.render(
+        <Counter
+          image={info.image}/>,document.getElementById('app')
+      );
+
+    </script>
+  </body>
+</html>
+
+       ReactDOM.render(
+         <Counter
+           date={info.date}
+           image={info.image}/>,document.getElementById('app')
+       );
+
+     </script>
+  </body>
+</html>
